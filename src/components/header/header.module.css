@@ -78,6 +78,7 @@
     font-size: 1.7rem;
     border-radius: 5px;
     width: 130px;
+    transition: 0.3s all;
   }
   .btn span {
     font-size: 0.8rem;
@@ -92,6 +93,7 @@
   .shop {
     font-size: 1.7rem;
     padding-right: 10px;
+    transition: 0.3s all;
   }
   .shop:hover {
     color: #26b9b0;

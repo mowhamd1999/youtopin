@@ -58,10 +58,12 @@
   border-left: 1px solid rgb(245, 245, 247);
   border-right: 1px solid rgb(245, 245, 247);
   padding: 0px 20px;
+  width: 70%;
+  justify-content: center;
 }
 .link_div {
   display: grid;
-  padding: 10px;
+  padding: 10px 30px;
 }
 .link {
   cursor: pointer;
@@ -100,10 +102,19 @@
   color: #9e9e9e;
   font-size: 0.8rem;
 }
-@media (max-width: 1360px) {
+@media (max-width: 1560px) {
+  .Links {
+    justify-content: center;
+  }
+  .link {
+    font-size: 0.8rem;
+  }
   .images {
     width: 50px;
     height: 50px;
+  }
+  .link_div {
+    padding: 10px;
   }
 }
 @media (max-width: 1260px) {
