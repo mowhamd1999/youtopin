@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,11 +18,16 @@ import secound from "./../../assets/SlideFirstSwiper/2.webp";
 import third from "./../../assets/SlideFirstSwiper/3.webp";
 
 const SliderSwiper = () => {
-  const progressCircle = useState(null);
-  const progressContent = useState(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty("--progress", 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+
+  const onAutoplayTimeLeft = (time, progress) => {
+    if (progressCircle.current) {
+      progressCircle.current.style.setProperty("--progress", 1 - progress);
+    }
+    if (progressContent.current) {
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    }
   };
 
   return (
@@ -43,13 +48,13 @@ const SliderSwiper = () => {
         className={style.mySwiper}
       >
         <SwiperSlide>
-          <img className={style.img} src={first} />
+          <img className={style.img} src={first} alt="Slide 1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className={style.img} src={secound} />
+          <img className={style.img} src={secound} alt="Slide 2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className={style.img} src={third} />
+          <img className={style.img} src={third} alt="Slide 3" />
         </SwiperSlide>
         <div className={style.autoplay_progress} slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

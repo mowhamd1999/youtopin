@@ -22,8 +22,8 @@ const fetchAPI = () => {
     dispatch(fetchTourRequest());
     axios
       .get("https://66cb0c7d4290b1c4f1995a66.mockapi.io/api/v1/tours")
-      .then((respose) => {
-        const tours = respose.data;
+      .then((response) => {
+        const tours = response.data;
         dispatch(fetchTourSuccess(tours));
       })
       .catch((error) => {
@@ -32,4 +32,4 @@ const fetchAPI = () => {
       });
   };
 };
-export default fetchAPI
+export default fetchAPI;

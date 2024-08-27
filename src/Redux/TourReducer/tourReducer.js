@@ -3,7 +3,7 @@ const initialState = {
   tours: [],
   error: "",
 };
-const tourReducer = (state = initialState, action) => {
+const toursReducer = (state = initialState, action) => {
   switch (action.type) {
     case "data_request":
       return {
@@ -24,4 +24,4 @@ const tourReducer = (state = initialState, action) => {
       return state;
   }
 };
-export default tourReducer;
+export default toursReducer;
