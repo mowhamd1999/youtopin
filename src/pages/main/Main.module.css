@@ -9,7 +9,17 @@
 }
 .first{
     margin: 0px auto;
-    padding: 30px 300px;
+    padding: 30px 250px;
+}
+@media(max-width : 1700px){
+    .first{
+        padding: 30px 50px;
+    }
+}
+@media(max-width : 1310px){
+    .first{
+        padding: 30px 10px;
+    }
 }
 .header{
     display: flex;
