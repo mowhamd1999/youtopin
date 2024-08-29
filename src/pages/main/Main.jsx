@@ -12,6 +12,7 @@ const Main = () => {
   const state = useSelector((state) => state.toursState);
   const besttour = state.tours.filter((item) => item.star >= 4);
   const asia = state.tours.filter((item) => item.continent === 'آسیا' && item.country !== 'ایران')
+  const euro = state.tours.filter(item => item.continent === 'اروپا')
   // console.log(besttour)
   useEffect(() => {
     if (!state.tours.length) dispatch(fetchAPI());
@@ -46,6 +47,15 @@ const Main = () => {
                 <button className={style.btn}>مشاهده همه</button>
               </div>
               <Swipers products={asia} />
+            </div>
+            <div className={style.div}>
+              <div className={style.header}>
+                <h2 className={style.h2}>
+                  تور‌های <span className={style.span}>آسیایی</span> یوتوپین
+                </h2>
+                <button className={style.btn}>مشاهده همه</button>
+              </div>
+              <Swipers products={euro} />
             </div>
           </div>
         </div>
