@@ -11,8 +11,10 @@ const Main = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.toursState);
   const besttour = state.tours.filter((item) => item.star >= 4);
-  const asia = state.tours.filter((item) => item.continent === 'آسیا' && item.country !== 'ایران')
-  const euro = state.tours.filter(item => item.continent === 'اروپا')
+  const asia = state.tours.filter(
+    (item) => item.continent === "آسیا" && item.country !== "ایران"
+  );
+  const euro = state.tours.filter((item) => item.continent === "اروپا");
   // console.log(besttour)
   useEffect(() => {
     if (!state.tours.length) dispatch(fetchAPI());

@@ -7,6 +7,9 @@
     width: 100%;
     direction: rtl;
 }
+.div{
+    margin: 50px 0px;
+}
 .first{
     margin: 0px auto;
     padding: 30px 250px;
