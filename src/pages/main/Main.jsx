@@ -5,6 +5,7 @@ import SliderSwiper from "../../components/sliderSwiper/SliderSwiper";
 import { useDispatch, useSelector } from "react-redux";
 import loading from "./../../assets/loading/loading.gif";
 import Swipers from "../../components/swipers/Swipers";
+import ImageSlide from "../../components/imageSlide/ImageSlide";
 
 const Main = () => {
   const loadinggif = loading;
@@ -53,7 +54,7 @@ const Main = () => {
             <div className={style.div}>
               <div className={style.header}>
                 <h2 className={style.h2}>
-                  تور‌های <span className={style.span}>آسیایی</span> یوتوپین
+                  تور‌های <span className={style.span}>اروپایی</span> یوتوپین
                 </h2>
                 <button className={style.btn}>مشاهده همه</button>
               </div>
@@ -62,6 +63,7 @@ const Main = () => {
           </div>
         </div>
       )}
+      <ImageSlide />
     </div>
   );
 };
