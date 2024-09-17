@@ -34,31 +34,13 @@
 .btn:hover {
   background-color: rgb(9, 80, 161);
 }
-.img_div {
-  position: relative;
+.second {
+  margin: 50px auto;
+  padding: 30px 280px;
+  direction: rtl;
 }
-.content_div {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.img {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  height: 550px;
-}
-.h1 {
-  font-size: 5rem;
-  color: white;
-}
-.content {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 50px;
-  font-size: 1.5rem;
+.h2_second{
+    text-align: center;
 }
 @media (max-width: 1700px) {
   .first {
@@ -70,3 +52,4 @@
     padding: 30px 10px;
   }
 }
+

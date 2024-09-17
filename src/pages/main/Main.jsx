@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import loading from "./../../assets/loading/loading.gif";
 import Swipers from "../../components/swipers/Swipers";
 import ImageSlide from "../../components/imageSlide/ImageSlide";
+import SortTours from "../../components/sortTours/SortTours";
 
 const Main = () => {
   const loadinggif = loading;
@@ -64,6 +65,10 @@ const Main = () => {
         </div>
       )}
       <ImageSlide />
+      <div className={style.second}>
+        <h2 className={style.h2_second}>دنبال چه توری می‌گردی؟</h2>
+        <SortTours />
+      </div>
     </div>
   );
 };
