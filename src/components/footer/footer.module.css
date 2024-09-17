@@ -173,7 +173,7 @@
   .div_2 {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: -webkit-center;
   }
   .p_div {
     padding: 10px 50px;

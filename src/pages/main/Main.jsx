@@ -7,6 +7,7 @@ import loading from "./../../assets/loading/loading.gif";
 import Swipers from "../../components/swipers/Swipers";
 import ImageSlide from "../../components/imageSlide/ImageSlide";
 import SortTours from "../../components/sortTours/SortTours";
+import Images from "../../components/imagesComponent/Images";
 
 const Main = () => {
   const loadinggif = loading;
@@ -68,6 +69,10 @@ const Main = () => {
       <div className={style.second}>
         <h2 className={style.h2_second}>دنبال چه توری می‌گردی؟</h2>
         <SortTours />
+      </div>
+      <div className={style.second}>
+        <h2>ماجراجویی یوتوپینی‌ها</h2>
+        <Images />
       </div>
     </div>
   );

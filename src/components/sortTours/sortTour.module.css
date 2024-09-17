@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  text-align: -webkit-center;
 }
 .content {
   flex: 0 1 calc(20% - 10px);
