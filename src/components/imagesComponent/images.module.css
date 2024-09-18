@@ -88,3 +88,8 @@
     height: 30%;
   }
 }
+@media (max-width: 570px) {
+  .p , .p_left  {
+    font-size: 0.7rem;
+  }
+}

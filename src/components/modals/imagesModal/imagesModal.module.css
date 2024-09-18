@@ -1,0 +1,60 @@
+/* تمام صفحه را با پس‌زمینه‌ای شفاف و تیره پوشش می‌دهد */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* پس‌زمینه‌ی شفاف و تیره */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* بالاترین لایه */
+}
+
+/* کادر مودال */
+.modal {
+  position: relative;
+  background-color: #403F3F;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  color: white;
+}
+.content{
+    margin: 0px 50px;
+    font-size: 1.3rem;
+}
+/* تصویر داخل مودال */
+.image {
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 8px;
+}
+
+/* دکمه بستن */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+@media(max-width: 1150px){
+    .modal{
+        display: block;
+        text-align: center;
+    }
+    .image{
+        width: 60%;
+        margin-top: 20px;
+        height: 60%;
+    }
+}
