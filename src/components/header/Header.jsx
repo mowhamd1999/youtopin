@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./header.module.css";
+import { Link } from "react-router-dom";
 import logo from "./../../assets/logo.png";
 import Ul from "./ul/Ul";
 import Search from "./search/Search";
@@ -31,12 +32,14 @@ const Header = () => {
         <nav className={style.container}>
           <div className={style.body}>
             <div className={style.first}>
-              <div className={style.div_logo}>
-                <img className={style.logo} src={logo} alt="" />
-                <span className={style.span_v1}>
-                  یوتو<span className={style.span_v2}>پین</span>
-                </span>
-              </div>
+              <Link to={'/'} className={style.Links} >
+                <div className={style.div_logo}>
+                  <img className={style.logo} src={logo} alt="" />
+                  <span className={style.span_v1}>
+                    یوتو<span className={style.span_v2}>پین</span>
+                  </span>
+                </div>
+              </Link>
               <div className={style.ui}>
                 <Ul />
               </div>
@@ -47,10 +50,12 @@ const Header = () => {
                 <span className={style.span_span}>021-91005711</span>
                 <IoCallOutline className={style.icons} />
               </div>
-              <div className={style.btn}>
-                <IoPersonOutline className={style.icons} />
-                <span className={style.span_span}>ورود / ثبت‌ نام</span>
-              </div>
+              <Link to={"/singup"} className={style.Links}>
+                <div className={style.btn}>
+                  <IoPersonOutline className={style.icons} />
+                  <span className={style.span_span}>ورود / ثبت‌ نام</span>
+                </div>
+              </Link>
               <div className={style.call}>
                 <HiOutlineShoppingCart className={style.shop} />
               </div>
