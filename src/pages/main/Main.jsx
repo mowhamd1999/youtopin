@@ -8,6 +8,7 @@ import Swipers from "../../components/swipers/Swipers";
 import ImageSlide from "../../components/imageSlide/ImageSlide";
 import SortTours from "../../components/sortTours/SortTours";
 import Images from "../../components/imagesComponent/Images";
+import BigIcons from "../../components/bigIcons/BigIcons";
 
 const Main = () => {
   const loadinggif = loading;
@@ -73,6 +74,10 @@ const Main = () => {
       <div className={style.second}>
         <h2>ماجراجویی یوتوپینی‌ها</h2>
         <Images />
+      </div>
+      <div className={style.third}>
+        <h2>چرا یوتوپین؟</h2>
+        <BigIcons />
       </div>
     </div>
   );

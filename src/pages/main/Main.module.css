@@ -39,6 +39,12 @@
   padding: 30px 280px;
   direction: rtl;
 }
+.third {
+  margin: 50px auto;
+  padding: 30px 280px;
+  direction: rtl;
+  text-align: center;
+}
 .h2_second {
   text-align: center;
 }
@@ -49,9 +55,15 @@
   .second {
     padding: 30px 50px;
   }
+  .third {
+    padding: 30px 250px;
+  }
 }
 @media (max-width: 1310px) {
   .first {
     padding: 30px 10px;
+  }
+  .third {
+    padding: 30px 50px;
   }
 }
