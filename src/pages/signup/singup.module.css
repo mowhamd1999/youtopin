@@ -1,49 +1,42 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 100px 100px;
-
-    text-align: right;
-}
 .input_container {
-    position: relative;
-    width: 300px;
-    margin-top: 40px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus {
-    border-color: #007bff;
-  }
-  
-  .floating_label {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #999;
-    pointer-events: none;
-    transition: all 0.5s ease;
-    background-color: white; /* اضافه کردن پس‌زمینه سفید */
-    padding: 0 5px; /* ایجاد فضای کافی اطراف متن لیبل */
-    z-index: 1; /* قرار دادن لیبل روی input */
-  }
-  
-  .focused .floating_label {
-    top: 0;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #007bff;
-    z-index: 1; /* حفظ لیبل بالای input */
-  }
+  position: relative;
+  width: 300px;
+  direction: rtl; /* برای متن‌های راست‌چین */
+}
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: white;
+  text-align: right; /* متن داخل input به سمت راست */
+}
+
+input:focus {
+  border-color: rgb(38, 184, 175);
+}
+
+.floating_label {
+  position: absolute;
+  right: 10px; /* تراز کردن لیبل به سمت راست */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  background-color: white; /* پس‌زمینه سفید برای لیبل */
+  padding: 0 5px;
+  z-index: 1; /* نمایش لیبل روی input */
+}
+
+.focused .floating_label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: black;
+  z-index: 1;
+}

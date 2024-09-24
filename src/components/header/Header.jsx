@@ -50,7 +50,7 @@ const Header = () => {
                 <span className={style.span_span}>021-91005711</span>
                 <IoCallOutline className={style.icons} />
               </div>
-              <Link to={"/singup"} className={style.Links}>
+              <Link to={"/login"} className={style.Links}>
                 <div className={style.btn}>
                   <IoPersonOutline className={style.icons} />
                   <span className={style.span_span}>ورود / ثبت‌ نام</span>

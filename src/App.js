@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
 //////////////////////////////////////////////////
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/singup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </div>
           <Footer />
