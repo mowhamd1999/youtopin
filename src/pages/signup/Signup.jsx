@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import style from "./singup.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
+import axios from "axios";
 const Signup = () => {
-  const [focusedField, setFocusedField] = useState(null); // یک استیت عمومی برای فوکوس همه ورودی‌ها
-
+  const [focusedField, setFocusedField] = useState(null); 
+  const [user , setUser ] = useState()
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
       password: "",
+      avatar: "https://www.imghippo.com/i/hphDo1727506240.png",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("نمیتواند خالی باشد"),
@@ -21,11 +22,23 @@ const Signup = () => {
         .min(8, "باید بیشتر از ۸ کارکتر باشد")
         .required("نمیتواند خالی باشد"),
     }),
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      if (values.name && values.email && values.password) {
+        try {
+          const response = await axios.post(
+            "https://api.escuelajs.co/api/v1/users/",
+            values
+          );
+          console.log(response.data);
+          setUser(response.data)
+        } catch (error) {
+          console.log(error);
+        }
+      }
     },
   });
-
+  
+  console.log(user)
   const handleFocus = (field) => {
     setFocusedField(field);
   };
@@ -92,7 +105,9 @@ const Signup = () => {
           ) : null}
         </div>
         <div className={style.div_btn}>
-          <button type="submit" className={style.btn}>ثبت نام</button>
+          <button type="submit" className={style.btn}>
+            ثبت نام
+          </button>
         </div>
       </form>
     </div>
