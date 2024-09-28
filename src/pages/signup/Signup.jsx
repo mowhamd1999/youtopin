@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./singup.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "../../Redux/userReducer/userAction";
+
 const Signup = () => {
-  const [focusedField, setFocusedField] = useState(null); 
-  const [user , setUser ] = useState()
+  const [focusedField, setFocusedField] = useState(null);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userState);
+
+  const createUser = async (user) => {
+    try {
+      const response = await axios.put(
+        `https://66cb0c7d4290b1c4f1995a66.mockapi.io/api/v1/users/${user.id}`,
+        user
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -26,19 +43,25 @@ const Signup = () => {
       if (values.name && values.email && values.password) {
         try {
           const response = await axios.post(
-            "https://api.escuelajs.co/api/v1/users/",
+            "https://66cb0c7d4290b1c4f1995a66.mockapi.io/api/v1/users",
             values
           );
           console.log(response.data);
-          setUser(response.data)
+          dispatch(setUser(response.data)); // ذخیره کاربر در Redux
         } catch (error) {
           console.log(error);
         }
       }
     },
   });
-  
-  console.log(user)
+
+  // آپدیت کاربر با درخواست PUT پس از ایجاد آن
+  useEffect(() => {
+    if (user && user.id) {
+      createUser(user);
+    }
+  }, [user]);
+
   const handleFocus = (field) => {
     setFocusedField(field);
   };
