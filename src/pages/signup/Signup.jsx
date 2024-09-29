@@ -12,7 +12,7 @@ const Signup = () => {
   const [focusedField, setFocusedField] = useState(null);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userState);
-
+  const navigate = useNavigate()
   const createUser = async (user) => {
     try {
       const response = await axios.put(
@@ -50,8 +50,32 @@ const Signup = () => {
           );
           console.log(response.data);
           dispatch(setUser(response.data));
+          formik.resetForm()
+          toast.success(`${response.data.name} ثبت نام شما با موفقیت انجام شد`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          setTimeout(() => {
+            navigate("/")
+          }, 3000);
         } catch (error) {
-          console.log(error);
+          formik.resetForm()
+          toast.error("اطلاعات را به درستی وارد و مججد تلاش کنید", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
       }
     },
@@ -131,6 +155,18 @@ const Signup = () => {
           </button>
         </div>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={true}
+        closeOnClick
+        rtl
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        richColors
+      />
     </div>
   );
 };
