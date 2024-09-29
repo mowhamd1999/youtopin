@@ -47,7 +47,7 @@ const Signup = () => {
             values
           );
           console.log(response.data);
-          dispatch(setUser(response.data)); // ذخیره کاربر در Redux
+          dispatch(setUser(response.data)); 
         } catch (error) {
           console.log(error);
         }
@@ -55,7 +55,7 @@ const Signup = () => {
     },
   });
 
-  // آپدیت کاربر با درخواست PUT پس از ایجاد آن
+
   useEffect(() => {
     if (user && user.id) {
       createUser(user);
@@ -80,7 +80,6 @@ const Signup = () => {
     <div className={style.container}>
       <h4 className={style.h4}>اطلاعات خود را وارد کنید</h4>
       <form onSubmit={formik.handleSubmit}>
-        {/* Name Input */}
         <div className={getClassName("name")}>
           <label className={style.floating_label}>نام و نام خانوادگی</label>
           <input
@@ -96,7 +95,6 @@ const Signup = () => {
           ) : null}
         </div>
 
-        {/* Email Input */}
         <div className={getClassName("email")}>
           <label className={style.floating_label}>ایمیل</label>
           <input
@@ -112,7 +110,6 @@ const Signup = () => {
           ) : null}
         </div>
 
-        {/* Password Input */}
         <div className={getClassName("password")}>
           <label className={style.floating_label}>رمز عبور</label>
           <input
