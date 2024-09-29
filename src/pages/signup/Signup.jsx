@@ -5,7 +5,9 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../Redux/userReducer/userAction";
-
+import { toast , ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const [focusedField, setFocusedField] = useState(null);
   const dispatch = useDispatch();
@@ -47,14 +49,13 @@ const Signup = () => {
             values
           );
           console.log(response.data);
-          dispatch(setUser(response.data)); 
+          dispatch(setUser(response.data));
         } catch (error) {
           console.log(error);
         }
       }
     },
   });
-
 
   useEffect(() => {
     if (user && user.id) {

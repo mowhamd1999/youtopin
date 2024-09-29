@@ -6,11 +6,16 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "../../Redux/userReducer/userAction";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,9 +29,56 @@ const Login = () => {
         .min(8, "باید بیشتر از ۸ کارکتر باشد")
         .required("نمیتواند خالی باشد"),
     }),
-    onSubmit: (values) => {
-      console.log(values);
-      // اینجا می‌توانید درخواست ورود به API را ارسال کنید
+    onSubmit: async (values) => {
+      try {
+        const response = await axios.get(
+          "https://66cb0c7d4290b1c4f1995a66.mockapi.io/api/v1/users"
+        );
+        const foundUser = response.data.find(
+          (user) =>
+            values.email === user.email && values.password === user.password
+        );
+        if (foundUser) {
+          dispatch(setUser(foundUser));
+          toast.success(`${foundUser.name} خوش آمدید`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          formik.resetForm();
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+        } else {
+          toast.error("ایمیل یا نام کاربری صحیح نمی‌باشد", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          formik.resetForm();
+        }
+      } catch (error) {
+        toast.warning("اتصال به اینترنت خود را برسی کنید", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
     },
   });
 
@@ -104,6 +156,18 @@ const Login = () => {
           </p>
         </div>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={true}
+        closeOnClick
+        rtl
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        richColors
+      />
     </div>
   );
 };
