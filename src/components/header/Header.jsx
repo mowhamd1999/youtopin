@@ -8,8 +8,10 @@ import { IoCallOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { LuMenu } from "react-icons/lu";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [isSmallScreen, setIsSmallScreen] = useState();
+  const users = useSelector((state) => state.userState);
   function debounce(fn, delay) {
     let timeoutId;
     return function (...args) {
@@ -17,6 +19,7 @@ const Header = () => {
       timeoutId = setTimeout(() => fn(...args), delay);
     };
   }
+
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 1095);
@@ -30,9 +33,9 @@ const Header = () => {
     <>
       {isSmallScreen === false && (
         <nav className={style.container}>
-          <div className={style.body}>
+          
             <div className={style.first}>
-              <Link to={'/'} className={style.Links} >
+              <Link to={"/"} className={style.Links}>
                 <div className={style.div_logo}>
                   <img className={style.logo} src={logo} alt="" />
                   <span className={style.span_v1}>
@@ -50,17 +53,23 @@ const Header = () => {
                 <span className={style.span_span}>021-91005711</span>
                 <IoCallOutline className={style.icons} />
               </div>
-              <Link to={"/login"} className={style.Links}>
-                <div className={style.btn}>
-                  <IoPersonOutline className={style.icons} />
-                  <span className={style.span_span}>ورود / ثبت‌ نام</span>
+              {users.user !== null ? (
+                <div className={style.name}>
+                  <span>{users.user.name}</span>
                 </div>
-              </Link>
+              ) : (
+                <Link to={"/login"} className={style.Links}>
+                  <div className={style.btn}>
+                    <IoPersonOutline className={style.icons} />
+                    <span className={style.span_span}>ورود / ثبت‌ نام</span>
+                  </div>
+                </Link>
+              )}
               <div className={style.call}>
                 <HiOutlineShoppingCart className={style.shop} />
               </div>
             </div>
-          </div>
+          
         </nav>
       )}
       {isSmallScreen === true && (

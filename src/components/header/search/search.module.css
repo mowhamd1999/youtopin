@@ -15,6 +15,7 @@
   font-size: 1rem;
   outline: none;
   background-color: #efefef;
+  height: 15px;
 }
 .searchButton {
   position: absolute;

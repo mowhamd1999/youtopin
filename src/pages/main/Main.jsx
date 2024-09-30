@@ -24,7 +24,6 @@ const Main = () => {
     if (!state.tours.length) dispatch(fetchAPI());
   }, [state.tours.length]);
 
-  console.log(state);
 
   return (
     <div>
