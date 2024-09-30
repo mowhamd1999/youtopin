@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 50px 100px;
+    direction: rtl;
+}
+.rightContainer{
+    width: 70%;
+}
+.leftContainer{
+    width: 30%;
+}

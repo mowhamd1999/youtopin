@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -39,7 +39,9 @@ const Swipers = ({ products }) => {
         {" "}
         {products.map((item) => (
           <SwiperSlide key={item.id} className={style.swiper_slide}>
-            <SwiperCart product={item} />
+            <Link className={style.links} to={`/tour/tour-details/${item.id}`}>
+              <SwiperCart product={item} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

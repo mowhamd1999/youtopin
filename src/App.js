@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
+import Tour_details from './pages/tour_details/Tour_details'
 //////////////////////////////////////////////////
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/tour/tour-details/:id" element={<Tour_details />} />
             </Routes>
           </div>
           <Footer />
