@@ -1,0 +1,22 @@
+.container{
+    margin-top: 25px;
+}
+.title{
+    color: #403F3F;
+}
+.p{
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+.span_div{
+    padding: 15px 10px;
+    border:1px solid #E4E7EB;
+    width: 20%;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+.info{
+    font-size: 0.8rem;
+}

@@ -1,0 +1,37 @@
+.container{
+    margin-top: 25px;
+}
+.title{
+    color: #403F3F;
+}
+.div{
+    display: flex;
+    justify-content: right;
+    direction: rtl;
+    align-items: center;
+    padding: 30px 0px;
+}
+.icon{
+    font-size: 1.8rem;
+    margin-left: 10px;
+}
+.first{
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+    align-items: center;
+    width: 30%;
+    border-left: 2px solid #E4E7EB;
+    padding: 20px 0px;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.p{
+    font-size: 0.8rem;
+}
+.span{
+    font-size: 0.9rem;
+}

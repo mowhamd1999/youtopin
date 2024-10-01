@@ -16,7 +16,7 @@
 }
 .top {
   display: flex;
-  border-bottom: 3px solid #EDEDED;
+  border-bottom: 3px solid #ededed;
   height: 550px;
 }
 .info_div {
@@ -27,4 +27,12 @@
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(237, 237, 237);
   width: 100%;
+}
+.price {
+  border-bottom: 3px solid #ededed;
+  height: 170px;
+}
+.time {
+  border-bottom: 3px solid #ededed;
+  height: 150px;
 }
