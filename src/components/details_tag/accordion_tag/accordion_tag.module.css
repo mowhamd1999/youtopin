@@ -1,0 +1,23 @@
+.container{
+    margin: 50px 0px;
+
+}
+.content{
+    direction: rtl;
+}
+.span{
+    padding: 5px 0px;
+    font-size: 0.9rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .headerText {
+    margin-left: 90%;
+    width: 100%;
+  }
+  

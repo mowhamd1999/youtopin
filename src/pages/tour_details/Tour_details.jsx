@@ -6,6 +6,8 @@ import style from "./tour_details.module.css";
 import Details_tag from "../../components/details_tag/Details_tag";
 import Price from "../../components/details_tag/price_tag/Price";
 import Time_tag from "../../components/details_tag/time_tag/Time_tag";
+import Accordion_tag from "../../components/details_tag/accordion_tag/Accordion_tag";
+
 const Tour_details = () => {
   const tours = useSelector((state) => state.toursState);
   const id = useParams();
@@ -27,6 +29,9 @@ const Tour_details = () => {
         </div>
         <div className={style.time}>
           <Time_tag details={tour} />
+        </div>
+        <div>
+            <Accordion_tag details={tour} />
         </div>
       </div>
       <div className={style.leftContainer}>s</div>
