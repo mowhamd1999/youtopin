@@ -1,12 +1,30 @@
-.container{
-    display: flex;
-    justify-content: center;
-    margin: 50px 100px;
-    direction: rtl;
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 100px 100px 20px 100px;
+  direction: rtl;
+  height: auto;
 }
-.rightContainer{
-    width: 70%;
+.rightContainer {
+  width: 70%;
 }
-.leftContainer{
-    width: 30%;
+.leftContainer {
+  width: 30%;
+}
+.swiper_div {
+  width: 50%;
+}
+.top {
+  display: flex;
+  border-bottom: 3px solid #EDEDED;
+  height: 550px;
+}
+.info_div {
+  margin: 0px 30px;
+  width: 100%;
+}
+.title {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(237, 237, 237);
+  width: 100%;
 }
