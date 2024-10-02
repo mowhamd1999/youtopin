@@ -1,0 +1,15 @@
+.container{
+    margin-top: 25px;
+}
+.title{
+    color: #403F3F;
+}
+.info{
+    display: flex;
+    padding: 20px 10px;
+}
+.icon{
+    font-size: 1.5rem;
+    margin-top: -5px;
+    margin-left: 10px;
+}

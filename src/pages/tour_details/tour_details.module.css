@@ -30,7 +30,14 @@
 }
 .price {
   border-bottom: 3px solid #ededed;
+  padding: 0px 0px 5px 0px;
 }
 .time {
+  border-bottom: 3px solid #ededed;
+}
+.accordion {
+  border-bottom: 3px solid #ededed;
+}
+.services {
   border-bottom: 3px solid #ededed;
 }

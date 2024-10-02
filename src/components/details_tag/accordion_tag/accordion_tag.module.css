@@ -1,23 +1,32 @@
-.container{
-    margin: 50px 0px;
+.container {
+  padding: 20px 20px;
+  background-color: rgb(242, 242, 242);
+  margin: 20px 0px;
+  border-radius: 20px;
+  width: 97%;
+}
+.title {
+  color: #403f3f;
+  margin: 0px 0px 5px 0px;
+}
+.accordion {
+  width: 100%;
+}
 
+.accordionSummary {
+  background-color: #f0f0f0;
 }
-.content{
-    direction: rtl;
+
+.accordionDetails {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.1s ease;
 }
-.span{
-    padding: 5px 0px;
-    font-size: 0.9rem;
+
+.accordionDetails.open {
+  max-height: 500px;
 }
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .headerText {
-    margin-left: 90%;
-    width: 100%;
-  }
-  
+
+.accordionDetails.closed {
+  max-height: 0;
+}
