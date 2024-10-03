@@ -1,0 +1,31 @@
+.container{
+    margin-top: 25px;
+}
+.title{
+    color: #403F3F;
+}
+.h4{
+    margin: 10px 10px;
+    border-bottom: 2px solid rgb(38, 184, 175);
+    width: 10%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.info{
+    padding: 10px 20px;
+}
+.name{
+    display: flex;
+}
+.p{
+    padding-left: 20px;
+    font-size: 0.9rem;
+}
+.description{
+    margin-top: 20px;
+    display: flex;
+}
+.span{
+    font-size: 0.9rem;
+}

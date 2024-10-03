@@ -8,6 +8,8 @@ import Price from "../../components/details_tag/price_tag/Price";
 import Time_tag from "../../components/details_tag/time_tag/Time_tag";
 import Accordion_tag from "../../components/details_tag/accordion_tag/Accordion_tag";
 import Services_tag from "../../components/details_tag/services_tag/Services_tag";
+import Residance_tag from "../../components/details_tag/residence/Residance_tag";
+import Leader_tag from "../../components/details_tag/leader_tag/Leader_tag";
 
 const Tour_details = () => {
   const tours = useSelector((state) => state.toursState);
@@ -36,6 +38,12 @@ const Tour_details = () => {
         </div>
         <div className={style.services}>
           <Services_tag details={tour} />
+        </div>
+        <div className={style.services}>
+          <Residance_tag details={tour} />
+        </div>
+        <div className={style.services}>
+          <Leader_tag details={tour} />
         </div>
       </div>
       <div className={style.leftContainer}>s</div>
