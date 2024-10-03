@@ -1,18 +1,18 @@
 .container {
   display: flex;
   justify-content: center;
-  margin: 100px 100px 20px 100px;
+  margin: 100px 50px 20px 50px;
   direction: rtl;
   height: auto;
 }
 .rightContainer {
-  width: 70%;
+  width: 75%;
 }
 .leftContainer {
-  width: 30%;
+  width: 25%;
 }
 .swiper_div {
-  width: 50%;
+  width: 45%;
 }
 .top {
   display: flex;

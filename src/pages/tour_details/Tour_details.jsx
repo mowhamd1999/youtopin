@@ -12,6 +12,7 @@ import Residance_tag from "../../components/details_tag/residence/Residance_tag"
 import Leader_tag from "../../components/details_tag/leader_tag/Leader_tag";
 import Law_tag from "../../components/details_tag/law_tag/Law_tag";
 import Description_tag from "../../components/details_tag/description_tag/Description_tag";
+import Card_tag from "../../components/details_tag/card_tag/Card_tag";
 
 const Tour_details = () => {
   const tours = useSelector((state) => state.toursState);
@@ -54,7 +55,9 @@ const Tour_details = () => {
           <Description_tag details={tour} />
         </div>
       </div>
-      <div className={style.leftContainer}>s</div>
+      <div className={style.leftContainer}>
+        <Card_tag details={tour} />
+      </div>
     </div>
   );
 };

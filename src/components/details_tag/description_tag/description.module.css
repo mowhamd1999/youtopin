@@ -9,9 +9,13 @@
     margin: 10px 15px;
 }
 .p{
-    margin-left: 10px;
+    padding-left: 20px;
+    font-size: 0.9rem;
 }
 .description{
     display: flex;
     margin: 10px 15px;
+}
+.span{
+    font-size: 0.9rem;
 }
