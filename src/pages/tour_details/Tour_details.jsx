@@ -10,6 +10,8 @@ import Accordion_tag from "../../components/details_tag/accordion_tag/Accordion_
 import Services_tag from "../../components/details_tag/services_tag/Services_tag";
 import Residance_tag from "../../components/details_tag/residence/Residance_tag";
 import Leader_tag from "../../components/details_tag/leader_tag/Leader_tag";
+import Law_tag from "../../components/details_tag/law_tag/Law_tag";
+import Description_tag from "../../components/details_tag/description_tag/Description_tag";
 
 const Tour_details = () => {
   const tours = useSelector((state) => state.toursState);
@@ -39,11 +41,17 @@ const Tour_details = () => {
         <div className={style.services}>
           <Services_tag details={tour} />
         </div>
-        <div className={style.services}>
+        <div className={style.residance}>
           <Residance_tag details={tour} />
         </div>
-        <div className={style.services}>
+        <div className={style.leader}>
           <Leader_tag details={tour} />
+        </div>
+        <div className={style.law}>
+          <Law_tag details={tour} />
+        </div>
+        <div className={style.description}>
+          <Description_tag details={tour} />
         </div>
       </div>
       <div className={style.leftContainer}>s</div>
