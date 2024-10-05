@@ -28,6 +28,9 @@
 .change {
   font-weight: lighter;
 }
+.quantity {
+  border-bottom: 1px dashed #cbcbcb;
+}
 .quantity_div {
   display: flex;
   justify-content: center;
@@ -42,11 +45,34 @@
   margin: 1px 15px 0px 15px;
   font-size: 1.5rem;
   color: #26b8af;
+  cursor: pointer;
 }
-.decrease_btn {
+.decrease_btn_true {
   background-color: inherit;
   border: none;
   margin: 1px 15px 0px 15px;
   font-size: 1.5rem;
-  color: #26b8af;
+  color: #ff6666;
+  cursor: pointer;
+}
+.decrease_btn_false {
+  background-color: inherit;
+  border: none;
+  margin: 1px 15px 0px 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #cbcbcb;
+}
+.span {
+  font-size: 0.8rem;
+  padding-right: 5px;
+}
+.total {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.total p {
+    font-size: 0.9rem;
 }

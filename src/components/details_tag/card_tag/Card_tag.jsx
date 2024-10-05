@@ -6,6 +6,16 @@ import { FiMinus } from "react-icons/fi";
 ///////////////////////////////////////////
 const Card_tag = ({ details }) => {
   const [quantity, setQuantity] = useState(1);
+  const increaseHandler = () => {
+    if (quantity < 4) {
+      setQuantity(quantity + 1);
+    }
+  };
+  const decreaseHandler = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
   return (
     <div className={style.container}>
       <h3>
@@ -27,10 +37,30 @@ const Card_tag = ({ details }) => {
         <div className={style.quantity}>
           <p className={style.p}>تعداد مسافر :</p>
           <div className={style.quantity_div}>
-            <GoPlus className={style.increase_btn} />
-            <span className={style.quantity_quantity}>{quantity}</span>
-            <FiMinus className={style.decrease_btn} />
+            <GoPlus className={style.increase_btn} onClick={increaseHandler} />
+            <span className={style.quantity_quantity}>
+              {quantity} <span className={style.span}>مسافر</span>
+            </span>
+            <FiMinus
+              className={
+                quantity === 1
+                  ? style.decrease_btn_false
+                  : style.decrease_btn_true
+              }
+              onClick={decreaseHandler}
+            />
           </div>
+        </div>
+      </div>
+      <div className={style.total}>
+        <p>جمع کل:</p>
+        <div className={style.money_span}>
+          <span>
+            <span className={style.money}>{details.price * quantity}</span>
+            <span className={style.change}>
+              {details.country === "ایران" ? "تومان" : "یورو"}
+            </span>
+          </span>
         </div>
       </div>
     </div>
