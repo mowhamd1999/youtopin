@@ -1,0 +1,13 @@
+.container{
+    direction: rtl;
+    display: flex;
+    width: 100%;
+}
+.right{
+    width: 60%;
+    padding: 30px 150px 30px 20px;
+}
+.left{
+    width: 40%;
+    padding: 30px 50px;
+}

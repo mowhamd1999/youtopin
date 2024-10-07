@@ -12,6 +12,7 @@ import Main from "./pages/main/Main";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Tour_details from './pages/tour_details/Tour_details'
+import Cart from "./pages/cart/Cart";
 //////////////////////////////////////////////////
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/tour/tour-details/:id" element={<Tour_details />} />
+              <Route path="/cart"  element={<Cart />}/>
             </Routes>
           </div>
           <Footer />
