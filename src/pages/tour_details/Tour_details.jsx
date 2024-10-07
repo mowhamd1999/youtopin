@@ -18,7 +18,7 @@ const Tour_details = () => {
   const tours = useSelector((state) => state.toursState);
   const id = useParams();
   const tour = tours.tours.find((item) => item.id === id.id);
-  console.log(tour);
+
   return (
     <div className={style.container}>
       <div className={style.rightContainer}>

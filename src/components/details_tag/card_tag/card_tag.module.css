@@ -3,6 +3,7 @@
   margin: 10px 0px;
   border-radius: 15px;
   border: 1px solid #e5e8ec;
+  width: 250px;
 }
 
 .id {
@@ -75,4 +76,18 @@
 }
 .total p {
     font-size: 0.9rem;
+}
+.btn{
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #26b8af;
+  color: white;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #0A50A1;
 }

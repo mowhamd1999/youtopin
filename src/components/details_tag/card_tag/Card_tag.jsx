@@ -4,18 +4,34 @@ import style from "./card_tag.module.css";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 ///////////////////////////////////////////
+import {useSelector, useDispatch } from "react-redux";
+import { ADD_PRODUCT } from './../../../Redux/userReducer/productAction';
+
+///////////////////////////////////////////
 const Card_tag = ({ details }) => {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1); // تعداد مسافر به صورت محلی نگهداری می‌شود
+  const dispatch = useDispatch();
+const data = useSelector(state => state.userState)
+console.log(data)
   const increaseHandler = () => {
     if (quantity < 4) {
       setQuantity(quantity + 1);
     }
   };
+
   const decreaseHandler = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
+
+  const reserveHandler = () => {
+    dispatch({
+      type: "ADD_PRODUCT",
+      payload: { ...details, quantity: quantity },
+    });
+  };
+
   return (
     <div className={style.container}>
       <h3>
@@ -63,6 +79,9 @@ const Card_tag = ({ details }) => {
           </span>
         </div>
       </div>
+      <button className={style.btn} onClick={reserveHandler}>
+        رزرو تور
+      </button>
     </div>
   );
 };
