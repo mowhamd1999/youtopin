@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Card_tag = ({ details }) => {
-  const [quantity, setQuantity] = useState(1); // نگهداری تعداد مسافر در state محلی
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const data = useSelector((state) => state.userState);
   console.log(data)

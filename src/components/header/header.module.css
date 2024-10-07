@@ -66,6 +66,12 @@
     align-items: center;
     justify-content: right;
   }
+  .call_v2 {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    direction: ltr;
+  }
   .icons {
     font-size: 1.7rem;
     padding: 0px 7px;
@@ -208,4 +214,19 @@
 .name:hover {
   background-color: #26b9b0;
   color: white;
+}
+.span_cart {
+  background-color: red;
+  padding: 6px 6px;
+  color: white;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -15px;
+  font-size: 0.8rem;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }

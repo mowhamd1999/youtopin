@@ -64,8 +64,15 @@ const Header = () => {
                 </div>
               </Link>
             )}
-            <div className={style.call}>
-              <HiOutlineShoppingCart className={style.shop} />
+            <div className={style.call_v2}>
+              <Link to={"/cart"} className={style.Links}>
+                <HiOutlineShoppingCart className={style.shop} />
+                {users.user ? (
+                  <span className={style.span_cart}>{users.products.length}</span>
+                ) : (
+                  ""
+                )}
+              </Link>
             </div>
           </div>
         </nav>
