@@ -17,7 +17,7 @@ const userReducer = (state = initialState, action) => {
       if (!state.products.find((item) => item.id === action.payload.id)) {
         return {
           ...state,
-          products: [...state.products, { ...action.payload, quantity: 1 }],
+          products: [...state.products, { ...action.payload, quantity: action.payload.quantity }],
         };
       }
       return state;
