@@ -1,0 +1,50 @@
+.container {
+  padding: 5px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.input_group {
+  position: relative;
+  width: 90%;
+  text-align: right;
+  direction: rtl;
+  float: right;
+}
+
+.floating_label {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  background-color: white;
+  padding: 0 5px;
+  z-index: 1;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: white;
+  text-align: right;
+}
+
+.input:focus {
+  border-color: rgb(38, 184, 175);
+}
+
+.focused {
+  top: 0px;
+  font-size: 12px;
+  color: #666;
+}

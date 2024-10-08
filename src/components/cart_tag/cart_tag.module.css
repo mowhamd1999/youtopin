@@ -2,5 +2,14 @@
   padding: 20px 0px;
 }
 .div{
-    border: 1px solid gray;
+    border: 1px solid #E4E7EB;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 20px 0px;
+    height: 250px;
+}
+.p{
+    text-align: center;
+    padding: 20px 0px 10px 0px;
+    font-size: 0.9rem;
+    color: rgb(87, 87, 87);
 }
