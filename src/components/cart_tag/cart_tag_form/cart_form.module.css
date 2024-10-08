@@ -18,8 +18,8 @@
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
-  color: #999;
+  font-size: 0.8rem;
+  color: #828282;
   pointer-events: none;
   transition: all 0.5s ease;
   background-color: white;
@@ -28,10 +28,10 @@
 }
 
 .input {
-  width: 100%;
+  width: 305px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid black;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   outline: none;
   transition: border-color 0.3s;
@@ -47,4 +47,28 @@
   top: 0px;
   font-size: 12px;
   color: #666;
+}
+.date {
+  display: flex;
+  align-items: center;
+}
+.date_p {
+  margin-left: 10px;
+  font-size: 0.8rem;
+  width: 51px;
+}
+.select {
+  padding: 10px 19px;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+.select:hover,
+.select:active,
+.select:focus,
+select:focus-visible {
+  border: 1px solid rgb(38, 184, 175);
+}
+.p_info {
+  font-size: 0.8rem;
 }

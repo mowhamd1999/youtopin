@@ -4,10 +4,25 @@ import style from "./cart_form.module.css";
 const Cart_form = () => {
   const [focusedInputs, setFocusedInputs] = useState({
     name: false,
-    input1: false,
-    input2: false,
-    input3: false,
+    userCode: false,
+    number: false,
+    email: false,
   });
+
+  const months = [
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند",
+  ];
 
   const handleFocus = (key) => {
     setFocusedInputs((prev) => ({ ...prev, [key]: true }));
@@ -17,9 +32,33 @@ const Cart_form = () => {
     setFocusedInputs((prev) => ({ ...prev, [key]: value !== "" }));
   };
 
+  const renderDayOptions = () => {
+    let options = [];
+    for (let day = 1; day <= 31; day++) {
+      options.push(
+        <option key={day} value={day}>
+          {day}
+        </option>
+      );
+    }
+    return options;
+  };
+
+  const renderYearOptions = () => {
+    let options = [];
+    const currentYear = new Date().getFullYear();
+    for (let year = currentYear - 30; year <= currentYear; year++) {
+      options.push(
+        <option key={year} value={year} className={style.option_year}>
+          {year}
+        </option>
+      );
+    }
+    return options;
+  };
+
   return (
     <div className={style.container}>
-      {/* Input 1: نام و نام خانوادگی */}
       <div className={style.input_group}>
         <label
           className={`${style.floating_label} ${
@@ -36,57 +75,82 @@ const Cart_form = () => {
         />
       </div>
 
-      {/* Input 2 */}
       <div className={style.input_group}>
         <label
           className={`${style.floating_label} ${
-            focusedInputs.input1 ? style.focused : ""
+            focusedInputs.userCode ? style.focused : ""
           }`}
         >
-          Input 2
+          کد ملی
         </label>
         <input
           type="text"
           className={style.input}
-          onFocus={() => handleFocus("input1")}
-          onBlur={(e) => handleBlur("input1", e.target.value)}
+          onFocus={() => handleFocus("userCode")}
+          onBlur={(e) => handleBlur("userCode", e.target.value)}
         />
       </div>
 
-      {/* Input 3 */}
       <div className={style.input_group}>
         <label
           className={`${style.floating_label} ${
-            focusedInputs.input2 ? style.focused : ""
+            focusedInputs.number ? style.focused : ""
           }`}
         >
-          Input 3
+          شماره موبایل
         </label>
         <input
           type="text"
           className={style.input}
-          onFocus={() => handleFocus("input2")}
-          onBlur={(e) => handleBlur("input2", e.target.value)}
+          onFocus={() => handleFocus("number")}
+          onBlur={(e) => handleBlur("number", e.target.value)}
         />
       </div>
-      <p>s</p>
-      {/* Input 4 */}
+
+      <div className={style.date}>
+        <p className={style.date_p}>تاریخ تولد</p>
+        <select name="day" id="day" className={style.select}>
+          <option value="" disabled selected hidden>
+            روز
+          </option>
+          {renderDayOptions()}
+        </select>
+        <select name="month" id="month" className={style.select}>
+          <option value="" disabled selected hidden>
+            ماه
+          </option>
+          {months.map((month, index) => (
+            <option key={index} value={index + 1}>
+              {month}
+            </option>
+          ))}
+        </select>
+        <select name="year" id="year" className={style.select}>
+          <option value="" disabled selected hidden>
+            سال
+          </option>
+          {renderYearOptions()}
+        </select>
+      </div>
+
       <div className={style.input_group}>
         <label
           className={`${style.floating_label} ${
-            focusedInputs.input3 ? style.focused : ""
+            focusedInputs.email ? style.focused : ""
           }`}
         >
-          Input 4
+          ایمیل (اختیاری)
         </label>
         <input
           type="text"
           className={style.input}
-          onFocus={() => handleFocus("input3")}
-          onBlur={(e) => handleBlur("input3", e.target.value)}
+          onFocus={() => handleFocus("email")}
+          onBlur={(e) => handleBlur("email", e.target.value)}
         />
       </div>
-      <p>s</p>
+      <p className={style.p_info}>
+        کد ملی و تاریخ تولد جهت صدور بلیت و بیمه استفاده می‌شود
+      </p>
     </div>
   );
 };
